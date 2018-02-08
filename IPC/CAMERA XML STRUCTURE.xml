@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Cameras>
+    <Camera ID="" Order="">
+		<ModelInfo>
+			<Model></Model>
+			<StreamType></StreamType>
+			<SourceUrl></SourceUrl>		
+			<Controls>
+				<StandartControls>
+					<Up StartEvent="" StopEvent="" />
+					<Down StartEvent="" StopEvent="" />
+					<Left StartEvent="" StopEvent="" />
+					<Right StartEvent="" StopEvent="" />
+					<ZoomIn StartEvent="" StopEvent="" />
+					<ZoomOut StartEvent="" StopEvent="" />
+				</StandartControls>
+				<AdditionalControls>
+					<Control name="" url=""></Control>
+					<Control name="" url=""></Control>
+				</AdditionalControls>
+			</Controls>        
+		</ModelInfo>
+        <Name></Name>
+		<Ip></Ip>
+		<UserName></UserName>
+		<Password></Password>
+		<Stamps>
+			<Stamp active="true" position="1" showName="true" showDate="true" />
+			<Stamp active="false" position="5" showName="false" showDate="false" />
+		</Stamps>
+    </Camera>
+    <Camera ID="" Order="">
+		<ModelInfo>
+			<Model></Model>
+			<StreamType></StreamType>
+			<SourceUrl></SourceUrl>		
+			<Controls>
+				<StandartControls>
+					<Up StartEvent="" StopEvent="" />
+					<Down StartEvent="" StopEvent="" />
+					<Left StartEvent="" StopEvent="" />
+					<Right StartEvent="" StopEvent="" />
+					<ZoomIn StartEvent="" StopEvent="" />
+					<ZoomOut StartEvent="" StopEvent="" />
+				</StandartControls>
+				<AdditionalControls>
+					<Control name="" url=""></Control>
+					<Control name="" url=""></Control>
+				</AdditionalControls>
+			</Controls>        
+		</ModelInfo>
+        <Name></Name>
+		<Ip></Ip>
+		<UserName></UserName>
+		<Password></Password>
+		<Stamps>
+			<Stamp active="true" position="1" showName="true" showDate="true" />
+			<Stamp active="false" position="5" showName="false" showDate="false" />
+		</Stamps>
+    </Camera>
+</Cameras>

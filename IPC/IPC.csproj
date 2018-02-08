@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD9A972E-6510-47EF-9BBD-B9B5A0F140B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IPC</RootNamespace>
+    <AssemblyName>IPC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CAM-IT.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>DLL Files\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>DLL Files\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>DLL Files\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG">
+      <HintPath>DLL Files\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.VFW">
+      <HintPath>DLL Files\AForge.Video.VFW.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>DLL Files\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\AudioFinishedEventHandler.cs" />
+    <Compile Include="Audio\AudioSourceErrorEventArgs.cs" />
+    <Compile Include="Audio\DataAvailableEventArgs.cs" />
+    <Compile Include="Audio\DataAvailableEventHandler.cs" />
+    <Compile Include="Audio\HasAudioStreamEventHandler.cs" />
+    <Compile Include="Audio\LevelChangedEventArgs.cs" />
+    <Compile Include="Audio\LevelChangedEventHandler.cs" />
+    <Compile Include="Audio\streams\IAudioSource.cs" />
+    <Compile Include="Camera\CameraConfig.cs" />
+    <Compile Include="Camera\CameraConnectionString.cs" />
+    <Compile Include="Camera\CameraModel.cs" />
+    <Compile Include="Camera\Components\ControllerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Camera\Components\ControllerPanel.Designer.cs">
+      <DependentUpon>ControllerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Camera\Components\CreateCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Camera\Components\CreateCamera.Designer.cs">
+      <DependentUpon>CreateCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Camera\Components\FullScreenCameraViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Camera\Components\FullScreenCameraViewer.Designer.cs">
+      <DependentUpon>FullScreenCameraViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Camera\Components\RecordSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Camera\Components\RecordSettings.Designer.cs">
+      <DependentUpon>RecordSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Camera\StreamCamera.cs" />
+    <Compile Include="Camera\Components\CameraViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Camera\Components\CameraViewerGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Camera\Components\CameraViewerGrid.Designer.cs">
+      <DependentUpon>CameraViewerGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\ComboboxItem.cs" />
+    <Compile Include="Encryption\Encryption.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="INI.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NAudio\Wave\VolumeWaveProvider16New.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Video\ByteArrayUtils.cs" />
+    <Compile Include="Video\FFMPEGStream.cs" />
+    <Compile Include="Video\ISupportsAudio.cs" />
+    <Compile Include="Video\JPEGStream2.cs" />
+    <Compile Include="Video\MJPEGStream2.cs" />
+    <Compile Include="Video\VideoWriter.cs" />
+    <Compile Include="XML\CAMERA XML STRUCTURE.cs">
+      <DependentUpon>CAMERA XML STRUCTURE.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Camera\Components\CameraViewer.resx">
+      <DependentUpon>CameraViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Camera\Components\CameraViewerGrid.resx">
+      <DependentUpon>CameraViewerGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Camera\Components\CreateCamera.resx">
+      <DependentUpon>CreateCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Camera\Components\FullScreenCameraViewer.resx">
+      <DependentUpon>FullScreenCameraViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Camera\Components\RecordSettings.resx">
+      <DependentUpon>RecordSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="XML\CAMERA XML STRUCTURE.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="avcodec-53.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avdevice-53.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avfilter-2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avfilter-3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avformat-53.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avutil-51.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CAM-IT.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ezMPEGLib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\A generic MPEG4 IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\ABS MegaCam 42xx series.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Active WebCam HTTP Server.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Airlink101 AIC250 Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Airlink101 AICAP650 PTZ Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Airlink101 SkyIPCam500.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\AL9603.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Argus AL9603.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\AVerMedia NC100 IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Aviosys IP Kamera 9060.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Aviosys IP Kamera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\AWS2550 or 2551 Internet Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Axis PTZ Camera %28MJPEG mode%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Axis PTZ Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Axis Video Server.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\BSTI PD100HV2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\BSTI PD100V2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Camera 4XEM W-2100.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Canon Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\CAS-861.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Creative BriteCam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Creative Live.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\D-Link DCS-2000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\D-Link DCS-2100.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\D-Link DCS-2121 %28MJPEG Mode%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\D-Link DCS-2121.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\D-Link DCS-5300.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\D-Link Internet Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Eltis ET-1001 IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\F210A.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\FlexWatch Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Foscam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Grand IP Camera II.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GRANDTEC IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS-9603.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS1000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS1200.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS1200G.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS1600.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS4000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS800.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\GS9684.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Hawking NC200 or NC220W.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Hunt LAN Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\I-Watcher IC300.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\I-Watcher IC301.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\I-Watcher IP200.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\I-Watcher IP560.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\I-Watcher PT300.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\INTELLINET 550710.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\IP207w.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\IPS-9603.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\IQeye300 Series IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\IQeye501 Series IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\IQeye600 Series IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\JVC Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\KW3701 CMOS Wired Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\KW3702 CMOS Wireless Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\KW3715 CCD Wired Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\KW3716 CCD Wireless Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\KW3720 1 Port Video Server.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\KW3730 Dual Mode Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Landatel TLH-3P8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Lenovo 1001 IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\LevelOne FCS-1010.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\LevelOne WCS-2000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\LevelOne WCS-2060%28JPEG mode%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Levo ET-1001 IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\LINDY IP NetCam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Linksys IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Linksys WVC200 Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\MOBI 312A MobiCam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\MOBI 70042 MobiCam IP.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\MOBI 70170 MobiCam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\MOBI Internet Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\MOBOTIX Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-6000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-8000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-8005.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-8010.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-8013.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-8014.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-8020.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Mosaic ST-8031.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC 800 IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC1000-L10 or W10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC1200.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC1200G.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC1600.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC4000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC9603.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\NC9684.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\ORITE IP-Cam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\ORITE PT-300.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Panasonic BL-C10A or BL-C30A Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Panasonic Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Panasonic WV Camera.txt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Panasonic WV-NP472 Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Pixord Video Server.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Planet ICA-110 or 110W.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Siemens Gigaset WLAN Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\SOHO Internet Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Sony Network Camera %28MJPEG mode%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Sony Network Camera SNC-M3 %28MPEG4%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Sony Network Camera SNC-M3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Sony Network Camera SNC-P5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Sony Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Stardot Netcam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Swann Max-IP-Cam.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Sweex IP Network Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Toshiba IK-WB02A.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Toshiba IK-WB11A or IK-WB01A %28firmware 2.0 or later%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Toshiba IK-WB11A or IK-WB01A.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Toshiba IK-WB15A.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Toshiba IK-WB21A.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Toshiba IK-WR01A.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\TRENDnet TV-IP100 or TV-IP100W.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\TRENDnet TV-IP110 or TV-IP110W.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\TRENDnet TV-IP200 or TV-IP200W.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\TRENDnet TV-IP201 or TV-IP201W.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\TRENDnet TV-IP400 or TV-IP400W.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Trust Surveillance Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\VCenter NC 1000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Veo Observer.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Vimicro Vilar IPCamera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Vivotek 3000 series.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Vivotek PTZ series.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Vivotek Video Server.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetCams Models\Xannet XIPCAM-1001 IP Camera.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="postproc-52.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\recbutton-down.png" />
+    <None Include="Resources\recbutton-off.png" />
+    <None Include="Resources\recbutton-on.png" />
+    <Content Include="swresample-0.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="swscale-2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\CAMERA XML STRUCTURE.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Cameras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Camera">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ModelInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Model" type="xs:string" />
+                    <xs:element name="StreamType" type="xs:string" />
+                    <xs:element name="SourceUrl" type="xs:string" />
+                    <xs:element name="Controls">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="StandartControls">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Up">
+                                  <xs:complexType>
+                                    <xs:attribute name="StartEvent" type="xs:string" use="optional" />
+                                    <xs:attribute name="StopEvent" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Down">
+                                  <xs:complexType>
+                                    <xs:attribute name="StartEvent" type="xs:string" use="optional" />
+                                    <xs:attribute name="StopEvent" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Left">
+                                  <xs:complexType>
+                                    <xs:attribute name="StartEvent" type="xs:string" use="optional" />
+                                    <xs:attribute name="StopEvent" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Right">
+                                  <xs:complexType>
+                                    <xs:attribute name="StartEvent" type="xs:string" use="optional" />
+                                    <xs:attribute name="StopEvent" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ZoomIn">
+                                  <xs:complexType>
+                                    <xs:attribute name="StartEvent" type="xs:string" use="optional" />
+                                    <xs:attribute name="StopEvent" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ZoomOut">
+                                  <xs:complexType>
+                                    <xs:attribute name="StartEvent" type="xs:string" use="optional" />
+                                    <xs:attribute name="StopEvent" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="AdditionalControls">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Control">
+                                  <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" use="optional" />
+                                    <xs:attribute name="url" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Ip" type="xs:string" />
+              <xs:element name="UserName" type="xs:string" />
+              <xs:element name="Password" type="xs:string" />
+              <xs:element name="Stamps">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Stamp">
+                      <xs:complexType>
+                        <xs:attribute name="active" type="xs:boolean" use="required" />
+                        <xs:attribute name="position" type="xs:int" use="required" />
+                        <xs:attribute name="showName" type="xs:boolean" use="required" />
+                        <xs:attribute name="showDate" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:int" use="required" />
+            <xs:attribute name="Order" type="xs:int" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
