@@ -1,0 +1,12 @@
+[Main]
+DateStamp=37935
+Modified=0
+NetworkCameraAdminWebPage=http://{CAMERA_IP}
+NetworkCameraCameraWebPage=http://{CAMERA_IP}
+NetworkCameraJPEGimage=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/cgi-bin/fwstream.cgi?CameraId=1&FwCgiVer=0x0001
+NetworkCamPanLeft=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/cgi-bin/ptz.cgi?ptzcam=1&ptzcmd=4&speed=1
+NetworkCamPanRight=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/cgi-bin/ptz.cgi?ptzcam=1&ptzcmd=6&speed=1
+NetworkCamTiltDown=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/cgi-bin/ptz.cgi?ptzcam=1&ptzcmd=2&speed=1
+NetworkCamTiltUp=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/cgi-bin/ptz.cgi?ptzcam=1&ptzcmd=8&speed=1
+NetworkCamZoomOut=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/cgi-bin/ptz.cgi?ptzcam=1&ptzcmd=O&speed=5
+NetworkCamZoomIN=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/cgi-bin/ptz.cgi?ptzcam=1&ptzcmd=I&speed=5

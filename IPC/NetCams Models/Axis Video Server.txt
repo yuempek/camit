@@ -1,0 +1,35 @@
+[Main]
+DateStamp=38393
+Modified=0
+NetworkCameraAdminWebPage=http://{CAMERA_IP}
+NetworkCameraCameraWebPage=http://{CAMERA_IP}
+NetworkCameraJPEGimage=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/axis-cgi/mjpg/video.cgi?des_fps={FPS}&date=0&clock=0&text=0&showlength=0&camera={ADDPARAM1}
+NetworkCameraAudioURL=
+NetworkCameraAudioSampleRate=-1
+NetworkCameraAudioBitsPerSample=-1
+NetworkCameraRestartCmnd=
+NetworkCamPanLeft=http://{CAMERA_IP}/axis-cgi/com/ptz.cgi?move=left
+NetworkCamPanRight=http://{CAMERA_IP}/axis-cgi/com/ptz.cgi?move=right
+NetworkCamTiltDown=http://{CAMERA_IP}/axis-cgi/com/ptz.cgi?move=down
+NetworkCamTiltUp=http://{CAMERA_IP}/axis-cgi/com/ptz.cgi?move=up
+NetworkCamZoomOut=http://{CAMERA_IP}/axis-cgi/com/ptz.cgi?rzoom=-2500
+NetworkCamZoomIN=http://{CAMERA_IP}/axis-cgi/com/ptz.cgi?rzoom=2500
+NetworkCamPanLeft_Up=
+NetworkCamPanRight_Up=
+NetworkCamTiltDown_Up=
+NetworkCamTiltUp_Up=
+NetworkCamZoomOut_Up=
+NetworkCamZoomIN_Up=
+NetworkCamCenterCommand=http://{CAMERA_IP}/axis-cgi/com/ptz.cgi?center={X},{Y}
+NetworkCamCenterXMin=0
+NetworkCamCenterXMax=0
+NetworkCamCenterMaxXEqWidth=1
+NetworkCamCenterMinY=0
+NetworkCamCenterMaxY=0
+NetworkCamCenterMaxYEqHeight=1
+NetworkCamInterfaceDll=
+NetworkCamRepeatInterval=500
+NUMBEROFADDPARAMS=1
+NETCAMADDPARAMHTML1=<TR><TD width="20"></TD><TD width="200" valign="middle">Video Port Number:</TD><TD valign="middle"><input type="text" name="NETCAMADDPARAMVALUE1" value="{NETCAMADDPARAMVALUE1}" size=4></TD></TR>
+NETCAMADDPARAMNAME1=Video Port Number:
+NETCAMADDPARAMINITVALUE1=1

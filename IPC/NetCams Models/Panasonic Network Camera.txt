@@ -1,0 +1,12 @@
+[Main]
+NetworkCameraAdminWebPage=http://{CAMERA_IP}/config.html
+NetworkCameraCameraWebPage=http://{CAMERA_IP}
+NetworkCameraJPEGimage=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/SnapshotJPEG?Resolution=320x240&Quality=Standard
+NetworkCamPanLeft=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/nphControlCamera?Direction=PanLeft
+NetworkCamPanRight=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/nphControlCamera?Direction=PanRight
+NetworkCamTiltDown=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/nphControlCamera?Direction=TiltDown
+NetworkCamTiltUp=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/nphControlCamera?Direction=TiltUp
+NetworkCamZoomOut=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/nphControlCamera?Direction=ZoomWide
+NetworkCamZoomIN=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/nphControlCamera?Direction=ZoomTele
+DateStamp=37934
+Modified=0

@@ -1,0 +1,18 @@
+[Main]
+DateStamp=37934
+Modified=0
+NetworkCameraAdminWebPage=http://{CAMERA_IP}
+NetworkCameraCameraWebPage=http://{CAMERA_IP}
+NetworkCameraJPEGimage=http://{USER_ID}:{PASSWORD}@{CAMERA_IP}/getimage?camera={ADDPARAM1}
+NetworkCamPanLeft=
+NetworkCamPanRight=
+NetworkCamTiltDown=
+NetworkCamTiltUp=
+NetworkCamZoomOut=
+NetworkCamZoomIN=
+
+NUMBEROFADDPARAMS=1
+NETCAMADDPARAMHTML1=<TR><TD width="20"></TD><TD width="200" valign="middle">Video Port Number:</TD><TD valign="middle"><input type="text" name="NETCAMADDPARAMVALUE1" value="{NETCAMADDPARAMVALUE1}" size=4></TD></TR>
+
+NETCAMADDPARAMNAME1=Video Port Number:
+NETCAMADDPARAMINITVALUE1=1
